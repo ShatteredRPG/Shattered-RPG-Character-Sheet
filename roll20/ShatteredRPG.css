@@ -1,10 +1,35 @@
 .logo
 {
+    float: right;
     background-image:url('http://shattered-rpg.com/images/roll20-logo.png');
     background-repeat: no-repeat;
     background-size: 300px 160px;
     background-position: top;
+
 }
+.logo table
+{
+    border-collapse:collapse;
+}
+.logo tr
+{
+    border: none;}
+.logo thead
+{
+    border-top:
+        solid 1px;
+    border-bottom: solid 1px;
+}
+.logo tfoot
+{
+    border-bottom: solid 1px;
+}
+.logo td
+{
+    border-right: solid 1px;
+    border-left: solid 1px;
+}
+
 
 .dieCodeCol
 {
