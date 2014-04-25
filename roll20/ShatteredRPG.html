@@ -1,35 +1,246 @@
 <html>
-    <!-- Header / Character Info -->
-    <div id="header" style="float: right;">
-        <div style="float: right;">
-            <img alt="Shattered RPG"
-                 src="http://shattered-rpg.com/images/roll20-shatteredLogo.png">
+    <head>
+        <link rel="stylesheet" type="text/css" href="ShatteredRPG.css">
+    </head>
+    <!-- temp div for approximate roll20 width -->
+    <div style="width:870px">
+        <!-- Header / Character Info -->
+        <div id="header">
+            <div class="logo">
+                <table>
+                <thead>
+                <td>Rank</td>
+                <td>Dice</td>
+                <td>Rank</td>
+                <td>Dice</td>
+                <td>Rank</td>
+                <td>Dice</td>
+                </thead>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        1d4
+                    </td>
+                    <td>
+                        8
+                    </td>
+                    <td>
+                        2d10
+                    </td>
+                    <td>
+                        15
+                    </td>
+                    <td>
+                        3d10+1d8
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        1d6
+                    </td>
+                    <td>
+                        9
+                    </td>
+                    <td>
+                        2d10+1d4
+                    </td>
+                    <td>
+                        16
+                    </td>
+                    <td>
+                        4d10
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        1d8
+                    </td>
+                    <td>
+                        10
+                    </td>
+                    <td>
+                        2d10+1d6
+                    </td>
+                    <td>
+                        17
+                    </td>
+                    <td>
+                        4d10+1d4
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        4
+                    </td>
+                    <td>
+                        1d10
+                    </td>
+                    <td>
+                        11
+                    </td>
+                    <td>
+                        2d10+1d8
+                    </td>
+                    <td>
+                        18
+                    </td>
+                    <td>
+                        4d10+1d6
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        5
+                    </td>
+                    <td>
+                        1d10+1d4
+                    </td>
+                    <td>
+                        12
+                    </td>
+                    <td>
+                        3d10
+                    </td>
+                    <td>
+                        19
+                    </td>
+                    <td>
+                        4d10+1d8
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        6
+                    </td>
+                    <td>
+                        1d10+1d6
+                    </td>
+                    <td>
+                        13
+                    </td>
+                    <td>
+                        3d10+1d4
+                    </td>
+                    <td>
+                        20
+                    </td>
+                    <td>
+                        5d10
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        7
+                    </td>
+                    <td>
+                        1d10+1d8
+                    </td>
+                    <td>
+                        14
+                    </td>
+                    <td>
+                        3d10+1d6
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <!-- Die Codes and Logo -->
+            <div class="logo">
+                <div class="dieCodeCol">
+                    <b>Dice</b><br />
+                    3d10+1d8<br />
+                    4d10<br />
+                    4d10+1d4<br />
+                    4d10+1d6<br />
+                    4d10+1d8<br />
+                    5d10<br />
+                    <br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Rank</b><br />
+                    15<br />
+                    16<br />
+                    17<br />
+                    18<br />
+                    19<br />
+                    20<br />
+                    <br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Dice</b><br />
+                    2d10<br />
+                    2d10+1d4<br />
+                    2d10+1d6<br />
+                    2d10+1d8<br />
+                    3d10<br />
+                    3d10+1d4<br />
+                    3d10+1d6<br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Rank</b><br />
+                    8<br />
+                    9<br />
+                    10<br />
+                    11<br />
+                    12<br />
+                    13<br />
+                    14<br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Dice</b><br />
+                    1d4<br />
+                    1d6<br />
+                    1d8<br />
+                    1d10<br />
+                    1d10+1d4<br />
+                    1d10+1d6<br />
+                    1d10+1d8<br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Rank</b><br />
+                    1<br />
+                    2<br />
+                    3<br />
+                    4<br />
+                    5<br />
+                    6<br />
+                    7<br />
+                </div>
+
+            </div>
+                <div class="border">
+                <div style="float: left;"><input type="text" name="attr_player"><br /><label>Player Name</label></div>
+                <div style="float: left;"><input type="text" name="attr_gm"><br /><label>GM</label></div>
+                <div style="float: left;"><input type="text" name="attr_game"><br /><label>Game</label></div>
+            </div>
+            <br /><br /><br />
+            <div class="border">
+                <div style="float: left;"><input type="text" name="attr_character_name"><br /><label>Character Name</label></div>
+                <div style="float: left;"><input type="text" name="attr_race"><br /><label>Race</label></div>
+                <div style="float: left;"><input type="text" name="attr_gender"><br /><label>Gender</label></div>
+            </div>
+            <br /><br /><br />
+            <div class="border">
+                <div style="float: left;"><input type="text" name="attr_languages"><br /><label>Languages</label></div>
+                <div style="float: left;"><input type="text" name="attr_remaining_xp"><br /><label>Remaining XP</label></div>
+                <div style="float: left;"><input type="text" name="attr_total_xp"><br /><label>Total XP</label></div>
+            </div>
+
+
         </div>
-        <div style="float: right;"><input type="text" name="attr_player"><br /><label>Player</label></div>
-        <div style="float: right;"><input type="text" name="attr_gm"><br /><label>GM</label></div>
-        <div style="float: right;"><input type="text" name="attr_game"><br /><label>Game</label></div>
-        <br />
-        <div style="float: right;"><input type="text" name="attr_character_name"><br /><label>Character Name</label></div>
-        <div style="float: right;"><input type="text" name="attr_race"><br /><label>Race</label></div>
-        <div style="float: right;"><input type="text" name="attr_gender"><br /><label>Gender</label></div>
-        
     </div>
 </html>
-
-<!--
-
-    <div class="row">
-        <label>Player:</label><input type="text" name="pN">
-        <label>GM:</label><input type="text" name="gmN">
-        <label>Game:</label><input type="text" name="gN">
-    </div>
-    <div class="row">
-
-    </div>
-    <div class="row">
-        <label>Languages:</label><input type="text" name="lang">
-        <label>Total XP:</label><input type="text" name="tXP">
-        <label>Remaining XP:</label><input type="text" name="rXP">
-    </div>
-</div>
--->

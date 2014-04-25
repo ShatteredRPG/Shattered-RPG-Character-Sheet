@@ -1,4 +1,15 @@
-.rAlign
+.logo
+{
+    background-image:url('http://shattered-rpg.com/images/roll20-logo.png');
+    background-repeat: no-repeat;
+    background-size: 300px 160px;
+    background-position: top;
+}
+
+.dieCodeCol
 {
     float: right;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
 }
