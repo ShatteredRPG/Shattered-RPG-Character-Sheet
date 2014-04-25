@@ -3,100 +3,126 @@
         <link rel="stylesheet" type="text/css" href="ShatteredRPG.css">
     </head>
     <!-- temp div for approximate roll20 width -->
-    <div style="width:870px">
-        <!-- Die Codes and Logo -->
-        <div class="logo">
-            <div class="dieCodeCol">
-                <b>Dice</b><br />
-                3d10+1d8<br />
-                4d10<br />
-                4d10+1d4<br />
-                4d10+1d6<br />
-                4d10+1d8<br />
-                5d10<br />
-                <br />
+    <body>
+        <div style="width:870px">
+            <!-- Die Codes and Logo -->
+            <div class="logo">
+                <div class="dieCodeCol">
+                    <b>Dice</b><br />
+                    3d10+1d8<br />
+                    4d10<br />
+                    4d10+1d4<br />
+                    4d10+1d6<br />
+                    4d10+1d8<br />
+                    5d10<br />
+                    <br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Rank</b><br />
+                    15<br />
+                    16<br />
+                    17<br />
+                    18<br />
+                    19<br />
+                    20<br />
+                    <br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Dice</b><br />
+                    2d10<br />
+                    2d10+1d4<br />
+                    2d10+1d6<br />
+                    2d10+1d8<br />
+                    3d10<br />
+                    3d10+1d4<br />
+                    3d10+1d6<br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Rank</b><br />
+                    8<br />
+                    9<br />
+                    10<br />
+                    11<br />
+                    12<br />
+                    13<br />
+                    14<br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Dice</b><br />
+                    1d4<br />
+                    1d6<br />
+                    1d8<br />
+                    1d10<br />
+                    1d10+1d4<br />
+                    1d10+1d6<br />
+                    1d10+1d8<br />
+                </div>
+                <div class="dieCodeCol">
+                    <b>Rank</b><br />
+                    1<br />
+                    2<br />
+                    3<br />
+                    4<br />
+                    5<br />
+                    6<br />
+                    7<br />
+                </div>
             </div>
-            <div class="dieCodeCol">
-                <b>Rank</b><br />
-                15<br />
-                16<br />
-                17<br />
-                18<br />
-                19<br />
-                20<br />
-                <br />
+            <!-- Header / Character Info -->
+            <div class="border">
+                <div style="float: left;"><input type="text" name="attr_player"><br /><label>Player Name</label></div>
+                <div style="float: left;"><input type="text" name="attr_gm"><br /><label>GM</label></div>
+                <div style="float: left;"><input type="text" name="attr_game"><br /><label>Game</label></div>
             </div>
-            <div class="dieCodeCol">
-                <b>Dice</b><br />
-                2d10<br />
-                2d10+1d4<br />
-                2d10+1d6<br />
-                2d10+1d8<br />
-                3d10<br />
-                3d10+1d4<br />
-                3d10+1d6<br />
+            <br /><br /><br />
+            <div class="border">
+                <div style="float: left;"><input type="text" name="attr_character_name"><br /><label>Character Name</label></div>
+                <div style="float: left;"><input type="text" name="attr_race"><br /><label>Race</label></div>
+                <div style="float: left;"><input type="text" name="attr_gender"><br /><label>Gender</label></div>
             </div>
-            <div class="dieCodeCol">
-                <b>Rank</b><br />
-                8<br />
-                9<br />
-                10<br />
-                11<br />
-                12<br />
-                13<br />
-                14<br />
+            <br /><br /><br />
+            <div class="border">
+                <div style="float: left;"><input type="text" name="attr_languages"><br /><label>Languages</label></div>
+                <div style="float: left;"><input type="text" name="attr_remaining_xp"><br /><label>Remaining XP</label></div>
+                <div style="float: left;"><input type="text" name="attr_total_xp"><br /><label>Total XP</label></div>
             </div>
-            <div class="dieCodeCol">
-                <b>Dice</b><br />
-                1d4<br />
-                1d6<br />
-                1d8<br />
-                1d10<br />
-                1d10+1d4<br />
-                1d10+1d6<br />
-                1d10+1d8<br />
-            </div>
-            <div class="dieCodeCol">
-                <b>Rank</b><br />
-                1<br />
-                2<br />
-                3<br />
-                4<br />
-                5<br />
-                6<br />
-                7<br />
-            </div>
-        </div>
-        <!-- Header / Character Info -->
-        <div class="border">
-            <div style="float: left;"><input type="text" name="attr_player"><br /><label>Player Name</label></div>
-            <div style="float: left;"><input type="text" name="attr_gm"><br /><label>GM</label></div>
-            <div style="float: left;"><input type="text" name="attr_game"><br /><label>Game</label></div>
-        </div>
-        <br /><br /><br />
-        <div class="border">
-            <div style="float: left;"><input type="text" name="attr_character_name"><br /><label>Character Name</label></div>
-            <div style="float: left;"><input type="text" name="attr_race"><br /><label>Race</label></div>
-            <div style="float: left;"><input type="text" name="attr_gender"><br /><label>Gender</label></div>
-        </div>
-        <br /><br /><br />
-        <div class="border">
-            <div style="float: left;"><input type="text" name="attr_languages"><br /><label>Languages</label></div>
-            <div style="float: left;"><input type="text" name="attr_remaining_xp"><br /><label>Remaining XP</label></div>
-            <div style="float: left;"><input type="text" name="attr_total_xp"><br /><label>Total XP</label></div>
-        </div>
-        <br /><br /><br />
-        <!-- Stats -->
-        <div>
-        <div style="float: left;"><label>Stat Name</label></div><div style="float: left;">Rank</div><br /><br />
-        <div style="float: left;">Strength (S)</div><div style="float: left;"><input type="text" name="attr_s" /></div><br /><br />
-        <div style="float: left;">Toughness (T)</div><div style="float: left;"><input type="text" name="attr_t" /></div><br /><br />
-        <div style="float: left;">Will Power (WP)</div><div style="float: left;"><input type="text" name="attr_wp" /></div><br /><br />
-        <div style="float: left;">Agility (Ag)</div><div style="float: left;"><input type="text" name="attr_ag" /></div><br /><br />
-        <div style="float: left;">Intelligence (Int)</div><div style="float: left;"><input type="text" name="attr_int" /></div><br /><br />
-        <div style="float: left;">Perception (Per)</div><div style="float: left;"><input type="text" name="attr_per" /></div><br /><br />
-        <div style="float: left;">Charisma (Cha)</div><div style="float: left;"><input type="text" name="attr_cha" /></div>
-</div>
+            <br /><br /><br />
+            <!-- Stats -->
+            <div>
+                <div style="float: left;"><label>Stat Name</label></div><div style="float: left;">Rank</div><br /><br />
+                <div style="float: left;">Strength (S)</div><div style="float: left;"><input type="text" name="attr_s" /></div><br /><br />
+                <div style="float: left;">Toughness (T)</div><div style="float: left;"><input type="text" name="attr_t" /></div><br /><br />
+                <div style="float: left;">Will Power (WP)</div><div style="float: left;"><input type="text" name="attr_wp" /></div><br /><br />
+                <div style="float: left;">Agility (Ag)</div><div style="float: left;"><input type="text" name="attr_ag" /></div><br /><br />
+                <div style="float: left;">Intelligence (Int)</div><div style="float: left;"><input type="text" name="attr_int" /></div><br /><br />
+                <div style="float: left;">Perception (Per)</div><div style="float: left;"><input type="text" name="attr_per" /></div><br /><br />
+                <div style="float: left;">Charisma (Cha)</div><div style="float: left;"><input type="text" name="attr_cha" /></div>
 
-    </div>
+                <!-- Melee Weapons -->
+                <div>
+                    <h1>Armor</h1>
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td>Range</td>
+                            <td>Damage</td>
+                            <td>Traits/Assemblies</td>
+                        </tr>
+                    </table>
+                    <fieldset class="repeating_meleeWeapons">
+                        <table>
+                            <tr>
+                                <td><input type="text" name="attr_melee_weapon" /></td>
+                                <td><input type="text" name="attr_melee_range" /></td>
+                                <td><input type="text" name="attr_melee_damage" /></td>
+                                <td></td><input type="text" name="attr_mele_traits" /></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
 </html>
