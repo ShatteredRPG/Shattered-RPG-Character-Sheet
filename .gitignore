@@ -2,9 +2,10 @@
 ## Eclipse
 #################
 
-copyToGit.bat
-
+*.config
 *.pydevproject
+*.csproj
+*.csproj.user
 .project
 .metadata
 bin/
@@ -45,6 +46,7 @@ local.properties
 
 # Build results
 
+[Pp]roperties/
 [Dd]ebug/
 [Rr]elease/
 x64/
