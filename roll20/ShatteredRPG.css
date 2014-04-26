@@ -1,41 +1,31 @@
+/*In case CSS works again...
 .logo
 {
     float: right;
     background-image:url('http://shattered-rpg.com/images/roll20-logo.png');
     background-repeat: no-repeat;
-    background-size: 300px 160px;
-    background-position: top;
-
+    background-size: 350px 170px;
 }
-.logo table
-{
-    border-collapse:collapse;
-}
-.logo tr
-{
-    border: none;}
-.logo thead
-{
-    border-top:
-        solid 1px;
-    border-bottom: solid 1px;
-}
-.logo tfoot
-{
-    border-bottom: solid 1px;
-}
-.logo td
-{
-    border-right: solid 1px;
-    border-left: solid 1px;
-}
-
-
-.dieCodeCol
+.dieCodeFirstCol
 {
     float: right;
     border-width: 1px;
-    border-color: black;
     border-style: solid;
     padding:2px;
 }
+.dieCodeCol
+{
+    float: right;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+    padding 2px;
+}
+
+.infoBox
+{
+    float: right;
+    border-width: 1px;
+    border-style: solid;
+}
+*/
