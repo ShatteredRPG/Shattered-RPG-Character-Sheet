@@ -1,5 +1,5 @@
 <!-- Die Codes and Logo -->
-<div style="float: right; background-image: url('http://shattered-rpg.com/images/roll20-logo.png'); background-repeat: no-repeat; background-size: 350px 170px;">
+<div style="float: right; background-image: url('http://shattered-rpg.com/images/roll20-logo.png'); background-repeat: no-repeat">
     <div style="float: right; border-bottom: solid 1px; border-top: solid 1px; border-right: solid 1px; padding: 2px;">
         <b>Dice</b><br />
         3d10+1d8<br />
@@ -92,46 +92,83 @@
 <br /><br /><br />
 <!-- Stats -->
 <div>
-    <div style="float: left; text-align: right;">
-        <label>Stat Name</label><br />
-        Strength (S)
-        Toughness (T)<br />
-        Will Power (WP)<br />
-        Agility (Ag)<br />
-        Intelligence (Int)<br />
-        Perception (Per)<br />
-        Charisma (Cha)<br />
+    <div style="float: left; text-align: center;">
+        <table style="border-collapse: collapse;">
+            <thead style="text-align: right;">
+                <tr>
+                    <td style="width: 100px; border: 1px solid;">Stat Name</td>
+                    <td style="width: 30px; border: 1px solid;">Rank</td>
+                    <td style="width: 100px; border: 1px solid;">Dice</td>
+                    <td style="border: 1px solid;"></td>
+                </tr>
+            </thead>
+            <tbody style="text-align: right;">
+                <tr>
+                    <td style="border: 1px solid;">Strength (S)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_str" style="width: 100%;" maxlength="2" /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_str_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_str" value="/me rolls a Strength Check:\n/r @{str_dice}"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid;">Toughness (T)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_tough" style="width: 100%;" maxlength="2" /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_tough_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_tough" value="/me rolls a Toughness Check:\n/r @{tough_dice}"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid;">Will Power (WP)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_wp" style="width: 100%;" maxlength="2" /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_wp_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_wp" value="/me rolls a Will Power Check:\n/r @{wp_dice}"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid;">Agility (Ag)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_agi" style="width: 100%;" maxlength="2" /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_agi_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls a Agility Check:\n/r @{ag_dice}"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid;">Intelligence (Int)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_int" style="width: 100%;" maxlength="2" /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_int_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_int" value="/me rolls a Intelligence Check:\n/r @{int_dice}"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid;">Perception (Per)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_per" style="width: 100%;" maxlength="2" /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_per_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_per" value="/me rolls a Perception Check:\n/r @{per_dice}"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid;">Charisma (Cha)</td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_cha" style="width: 100%;" maxlength="2" /><br /></td>
+                    <td style="border: 1px solid;"><input type="text" name="attr_cha_dice" style="width: 100%;" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_cha" value="/me rolls a Charisma Check:\n/r @{cha_dice}"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div style="float: left; text-align: right;">
-        <label>Rank</label><br />
-        <input type="text" name="attr_str" /><br />
-        <input type="text" name="attr_tough" /><br />
-        <input type="text" name="attr_wp" /><br />
-        <input type="text" name="attr_agi" /><br />
-        <input type="text" name="attr_int" /><br />
-        <input type="text" name="attr_per" /><br />
-        <input type="text" name="attr_cha" /><br />
-    </div>
+
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 <!-- Melee Weapons -->
 <div>
     <h1>Melee Weapons</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td style="width: 100px;">Range</td>
+            <td style="width: 100px;">Damage</td>
+            <td style="width: 120px;">Traits/Assemblies</td>
+        </tr>
+    </table>
     <fieldset class="repeating_meleeWeapons">
         <table>
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Range</td>
-                    <td>Damage</td>
-                    <td>Traits/Assemblies</td>
-                </tr>
-            </thead>
             <tr>
-                <td><input type="text" name="attr_melee_weapon" /></td>
-                <td><input type="text" name="attr_melee_range" /></td>
-                <td><input type="text" name="attr_melee_damage" /></td>
-                <td><input type="text" name="attr_mele_traits" /></td>
+                <td style="width: 150px;"><input type="text" name="attr_melee_weapon" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_melee_range" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_melee_damage" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_mele_traits" style="width: 100%;" /></td>
             </tr>
         </table>
     </fieldset>
