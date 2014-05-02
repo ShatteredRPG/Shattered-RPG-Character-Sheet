@@ -66,6 +66,7 @@
     <div style="float: left;">
         <div style="float: left;"><input type="text" name="attr_player" style="width:245%;"><br />Player Name</div>
     </div>
+    <br /><br /><br /><br />
     <div style="float: left;">
         <div style="float: left;"><input type="text" name="attr_gm"><br />GM</div>
         <div style="float: left;"><input type="text" name="attr_game"><br />Game</div>
@@ -125,13 +126,13 @@
                     <td style="border: 1px solid;">Agility (Ag)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_agi" style="width: 100%;" maxlength="2" /></td>
                     <td style="border: 1px solid;"><input type="text" name="attr_agi_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls a Agility Check:\n/r @{ag_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls an Agility Check:\n/r @{ag_dice}"></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Intelligence (Int)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_int" style="width: 100%;" maxlength="2" /></td>
                     <td style="border: 1px solid;"><input type="text" name="attr_int_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_int" value="/me rolls a Intelligence Check:\n/r @{int_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_int" value="/me rolls an Intelligence Check:\n/r @{int_dice}"></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Perception (Per)</td>
@@ -143,14 +144,90 @@
                     <td style="border: 1px solid;">Charisma (Cha)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_cha" style="width: 100%;" maxlength="2" /><br /></td>
                     <td style="border: 1px solid;"><input type="text" name="attr_cha_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_cha" value="/me rolls a Charisma Check:\n/r @{cha_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_cha" value="/me rolls a Charisma Check:\n/r @{cha_dice}" /></td>
                 </tr>
             </tbody>
         </table>
     </div>
+</div>
+<!-- Arkana -->
+<div style="float: left;">
+    <h1>Arkäna</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">School</td>
+            <td style="width: 30px;">Rank</td>
+            <td style="width: 115px;">Dice</td>
+            <td></td>
+        </tr>
+    </table>
+    <fieldset class="repeating_arkana">
+        <table>
+            <tr>
+                <td style="width: 150px">
+                    <select name="attr_arkana_school" style="width: 100%">
+                        <option value="Primaltheurgy">Primaltheurgy</option>
+                        <option value="Illusion">Illusion</option>
+                        <option value="Necromancy">Necromancy</option>
+                        <option value="Evokation">Evokation</option>
+                    </select>
+                </td>
+                <td style="width: 30px;"><input type="text" name="attr_arkana_rank" style="width: 100%;" maxlength="2" /></td>
+                <td style="width: 115px;">
+                    <select name="attr_arkana_roll" style="width: 100%;">
+                        <option value="1d4">1: 1d4</option>
+                        <option value="1d6">2: 1d6</option>
+                        <option value="1d8">3: 1d8</option>
+                        <option value="1d10">4: 1d10</option>
+                        <option value="1d10+1d4">5: 1d10+1d4</option>
+                        <option value="1d10+1d6">6: 1d101d6</option>
+                        <option value="1d10+1d8">7: 1d10+1d8</option>
+                        <option value="2d10">8: 2d10</option>
+                        <option value="2d10+1d4">9: 2d10+1d4</option>
+                        <option value="2d10+1d6">10: 2d10+1d6</option>
+                        <option value="2d10+1d8">11: 2d10+1d8</option>
+                        <option value="3d10">12: 3d10</option>
+                        <option value="3d10+1d4">13: 3d10+1d4</option>
+                        <option value="3d10+1d6">14: 3d10+1d6</option>
+                        <option value="3d10+1d8">15: 3d10+1d8</option>
+                        <option value="4d10">16: 4d10</option>
+                        <option value="4d10+1d4">17: 4d10+1d4</option>
+                        <option value="4d10+1d6" 1>8: 4d10+1d6</option>
+                        <option value="4d10+1d8">19: 4d10+1d8</option>
+                        <option value="5d10">20: 1d10</option>
+                    </select>
+                </td>
+                <td style="width: 50px;"><button type="roll" name="roll_arkana" value="/me rolls a(n) @{arkana_school} Check:\n/r @{arkana_roll}" /></td>
+            </tr>
+        </table>
+    </fieldset>
+    <table>
+        <thead>
+            <tr>
+                <td>Range</td>
+                <td>Overcast</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="width: 30px;"><input type="text" name="attr_arkana_range" disabled="true" value="@{int}*2" style="width: 100%;" /></td>
+                <td style="width: 150px;"><input type="text" name="attr_arkana_overcast_c" style="width: 25%;" /> / <input type="text" name="attr_arkana_overcast_m" style="width: 25%" /></td>
+            </tr>
+            <tr>
+                <td>(Int x 2)</td>
+                <td>(Current / Max)</td>
+            </tr>
+        </tbody>
+    </table>
 
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<!-- Armor -->
+<div>
+    <!-- honestly don't know how to do this.....-->
+    <h1>Armor Placeholder</h1>
+</div>
+
 <!-- Melee Weapons -->
 <div>
     <h1>Melee Weapons</h1>
@@ -159,17 +236,134 @@
             <td style="width: 150px;">Name</td>
             <td style="width: 100px;">Range</td>
             <td style="width: 100px;">Damage</td>
-            <td style="width: 120px;">Traits/Assemblies</td>
+            <td style="width: 200px;">Traits/Assemblies</td>
+            <td></td>
         </tr>
     </table>
     <fieldset class="repeating_meleeWeapons">
         <table>
             <tr>
-                <td style="width: 150px;"><input type="text" name="attr_melee_weapon" style="width: 100%;" /></td>
+                <td style="width: 150px;"><input type="text" name="attr_melee_name" style="width: 100%;" /></td>
                 <td style="width: 100px;"><input type="text" name="attr_melee_range" style="width: 100%;" /></td>
                 <td style="width: 100px;"><input type="text" name="attr_melee_damage" style="width: 100%;" /></td>
-                <td style="width: 200px;"><input type="text" name="attr_mele_traits" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_melee_traits" style="width: 100%;" /></td>
+                <td style="width: 50px;"><button type="roll" name="roll_melee_damage" value="/me rolls [Melee] @{melee_name} damage:\n/r @{melee_damage}" /></td>
             </tr>
         </table>
     </fieldset>
+</div>
+<!-- Ranged Weapons -->
+<div>
+    <h1>Ranged Weaons</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td style="width: 100px;">Range</td>
+            <td style="width: 100px;">Damage</td>
+            <td style="width: 100px">Reload</td>
+            <td style="width: 120px;">Traits/Assemblies</td>
+            <td></td>
+        </tr>
+    </table>
+    <fieldset class="repeating_rangedWeapons">
+        <table>
+            <tr>
+                <td style="width: 150px;"><input type="text" name="attr_ranged_name" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_ranged_range" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_ranged_damage" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_ranged_reload" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_ranged_traits" style="width: 100%;" /></td>
+                <td style="width: 50px;"><button type="roll" name="roll_ranged_damage" value="/me rolls [Ranged] @{ranged_name} damage:\n/r @{ranged_damage}" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+<!-- Prosthetics -->
+<div>
+    <h1>Prosthetics</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td style="width: 100px;">Threshold</td>
+            <td style="width: 100px;">Repair CX</td>
+            <td style="width: 200px;">Description</td>
+        </tr>
+    </table>
+    <fieldset class="repeating_meleeWeapons">
+        <table>
+            <tr>
+                <td style="width: 150px;"><input type="text" name="attr_prosthetics_name" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_prosthetics_threshold" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_prosthetics_repaircx" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_prosthetics_desc" style="width: 100%;" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+<!-- Mutations -->
+<div>
+    <h1>Mutations</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td style="width: 100px;">XP Cost</td>
+            <td style="width: 100px;">Book/Page</td></td>
+            <td style="width: 200px;">Description</td>
+        </tr>
+    </table>
+    <fieldset class="repeating_mutations">
+        <table>
+            <tr>
+                <td style="width: 150px;"><input type="text" name="attr_mutations_name" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_mutations_xp" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_mutations_bp" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_mutations_desc" style="width: 100%;" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+<!-- Racial Traits -->
+<div>
+    <h1>Racial Traits</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td style="width: 200px;">Description</td>
+        </tr>
+    </table>
+    <fieldset class="repeating_racialTraits">
+        <table>
+            <tr>
+                <td style="width: 150px;"><input type="text" name="attr_racialTraits_name" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_racialTraits_desc" style="width: 100%;" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+<!-- Talents -->
+<div>
+    <h1>Talents</h1>
+    <table>
+        <tr>
+            <td style="width: 150px;">Name</td>
+            <td style="width: 100px;">XP Cost</td>
+            <td style="width: 100px;">Book/Page</td></td>
+            <td style="width: 200px;">Description</td>
+        </tr>
+    </table>
+    <fieldset class="repeating_mutations">
+        <table>
+            <tr>
+                <td style="width: 150px;"><input type="text" name="attr_talents_name" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_talents_xp" style="width: 100%;" /></td>
+                <td style="width: 100px;"><input type="text" name="attr_talents_bp" style="width: 100%;" /></td>
+                <td style="width: 200px;"><input type="text" name="attr_talents_desc" style="width: 100%;" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+<!-- Notes & Comments -->
+<div>
+    <h1>Notes & Comments</h1>
+    <textarea name="attr_descAndComments"></textarea>
 </div>
