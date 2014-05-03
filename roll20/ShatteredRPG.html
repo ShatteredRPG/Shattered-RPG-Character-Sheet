@@ -1,3 +1,6 @@
+<!-- Special thanks to Brian from Roll20.net for the roll logic!
+    /r [[floor(@{tough}/4)]]d10 + [[floor({1,@{tough}%4}kl1/(@{tough}%4+1)+.5)]]d4 + [[floor({2,@{tough}%4}kl1/(@{tough}%4+1)+.45)]]d6 + [[floor(@{tough}%4/(@{tough}%4+1)+.25)]]d8
+-->
 <!-- Die Codes and Logo -->
 <div style="float: right; background-image: url('http://shattered-rpg.com/images/roll20-logo.png'); background-repeat: no-repeat">
     <div style="float: right; border-bottom: solid 1px; border-top: solid 1px; border-right: solid 1px; padding: 2px;">
@@ -99,7 +102,6 @@
                 <tr>
                     <td style="width: 100px; border: 1px solid;">Stat Name</td>
                     <td style="width: 30px; border: 1px solid;">Rank</td>
-                    <td style="width: 100px; border: 1px solid;">Dice</td>
                     <td style="border: 1px solid;"></td>
                 </tr>
             </thead>
@@ -107,44 +109,37 @@
                 <tr>
                     <td style="border: 1px solid;">Strength (S)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_str" style="width: 100%;" maxlength="2" /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_str_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_str" value="/me rolls a Strength Check:\n/r @{str_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_str" value="/me rolls a Strength Check of @{str}:\n/r [[floor(@{str}/4)]]d10 + [[floor({1,@{str}%4}kl1/(@{str}%4+1)+.5)]]d4 + [[floor({2,@{str}%4}kl1/(@{str}%4+1)+.45)]]d6 + [[floor(@{str}%4/(@{str}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Toughness (T)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_tough" style="width: 100%;" maxlength="2" /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_tough_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_tough" value="/me rolls a Toughness Check:\n/r @{tough_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_tough" value="/me rolls a Toughness Check of @{tough}:\n/r [[floor(@{tough}/4)]]d10 + [[floor({1,@{tough}%4}kl1/(@{tough}%4+1)+.5)]]d4 + [[floor({2,@{tough}%4}kl1/(@{tough}%4+1)+.45)]]d6 + [[floor(@{tough}%4/(@{tough}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Will Power (WP)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_wp" style="width: 100%;" maxlength="2" /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_wp_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_wp" value="/me rolls a Will Power Check:\n/r @{wp_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_wp" value="/me rolls a Will Power Check of @{wp}:\n/r [[floor(@{wp}/4)]]d10 + [[floor({1,@{wp}%4}kl1/(@{wp}%4+1)+.5)]]d4 + [[floor({2,@{wp}%4}kl1/(@{wp}%4+1)+.45)]]d6 + [[floor(@{wp}%4/(@{wp}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Agility (Ag)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_agi" style="width: 100%;" maxlength="2" /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_agi_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls an Agility Check:\n/r @{ag_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls an Agility Check of @{ag}:\n/r [[floor(@{ag}/4)]]d10 + [[floor({1,@{ag}%4}kl1/(@{ag}%4+1)+.5)]]d4 + [[floor({2,@{ag}%4}kl1/(@{ag}%4+1)+.45)]]d6 + [[floor(@{ag}%4/(@{ag}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Intelligence (Int)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_int" style="width: 100%;" maxlength="2" /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_int_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_int" value="/me rolls an Intelligence Check:\n/r @{int_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_int" value="/me rolls an Intelligence Check of @{int}:\n/r [[floor(@{int}/4)]]d10 + [[floor({1,@{int}%4}kl1/(@{int}%4+1)+.5)]]d4 + [[floor({2,@{int}%4}kl1/(@{int}%4+1)+.45)]]d6 + [[floor(@{int}%4/(@{int}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Perception (Per)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_per" style="width: 100%;" maxlength="2" /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_per_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_per" value="/me rolls a Perception Check:\n/r @{per_dice}"></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_per" value="/me rolls a Perception Check of @{per}:\n/r [[floor(@{per}/4)]]d10 + [[floor({1,@{per}%4}kl1/(@{per}%4+1)+.5)]]d4 + [[floor({2,@{per}%4}kl1/(@{per}%4+1)+.45)]]d6 + [[floor(@{per}%4/(@{per}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Charisma (Cha)</td>
                     <td style="border: 1px solid;"><input type="text" name="attr_cha" style="width: 100%;" maxlength="2" /><br /></td>
-                    <td style="border: 1px solid;"><input type="text" name="attr_cha_dice" style="width: 100%;" /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_cha" value="/me rolls a Charisma Check:\n/r @{cha_dice}" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_cha" value="/me rolls a Charisma Check of @{cha}:\n/r [[floor(@{cha}/4)]]d10 + [[floor({1,@{cha}%4}kl1/(@{cha}%4+1)+.5)]]d4 + [[floor({2,@{cha}%4}kl1/(@{cha}%4+1)+.45)]]d6 + [[floor(@{cha}%4/(@{cha}%4+1)+.25)]]d8" /></td>
                 </tr>
             </tbody>
         </table>
@@ -157,7 +152,6 @@
         <tr>
             <td style="width: 150px;">School</td>
             <td style="width: 30px;">Rank</td>
-            <td style="width: 115px;">Dice</td>
             <td></td>
         </tr>
     </table>
@@ -172,32 +166,9 @@
                         <option value="Evokation">Evokation</option>
                     </select>
                 </td>
-                <td style="width: 30px;"><input type="text" name="attr_arkana_rank" style="width: 100%;" maxlength="2" /></td>
-                <td style="width: 115px;">
-                    <select name="attr_arkana_roll" style="width: 100%;">
-                        <option value="1d4">1: 1d4</option>
-                        <option value="1d6">2: 1d6</option>
-                        <option value="1d8">3: 1d8</option>
-                        <option value="1d10">4: 1d10</option>
-                        <option value="1d10+1d4">5: 1d10+1d4</option>
-                        <option value="1d10+1d6">6: 1d101d6</option>
-                        <option value="1d10+1d8">7: 1d10+1d8</option>
-                        <option value="2d10">8: 2d10</option>
-                        <option value="2d10+1d4">9: 2d10+1d4</option>
-                        <option value="2d10+1d6">10: 2d10+1d6</option>
-                        <option value="2d10+1d8">11: 2d10+1d8</option>
-                        <option value="3d10">12: 3d10</option>
-                        <option value="3d10+1d4">13: 3d10+1d4</option>
-                        <option value="3d10+1d6">14: 3d10+1d6</option>
-                        <option value="3d10+1d8">15: 3d10+1d8</option>
-                        <option value="4d10">16: 4d10</option>
-                        <option value="4d10+1d4">17: 4d10+1d4</option>
-                        <option value="4d10+1d6" 1>8: 4d10+1d6</option>
-                        <option value="4d10+1d8">19: 4d10+1d8</option>
-                        <option value="5d10">20: 1d10</option>
-                    </select>
+                <td style="width: 30px;"><input type="text" name="attr_arkana_rank" style="width: 100%;" maxlength="2" /></td>ct>
                 </td>
-                <td style="width: 50px;"><button type="roll" name="roll_arkana" value="/me rolls a(n) @{arkana_school} Check:\n/r @{arkana_roll}" /></td>
+                <td style="width: 50px;"><button type="roll" name="roll_arkana" value="/me rolls a(n) @{arkana_school} Check of @{arkana_rank}:\n/r [[floor(@{arkana_rank}/4)]]d10 + [[floor({1,@{arkana_rank}%4}kl1/(@{arkana_rank}%4+1)+.5)]]d4 + [[floor({2,@{arkana_rank}%4}kl1/(@{arkana_rank}%4+1)+.45)]]d6 + [[floor(@{arkana_rank}%4/(@{arkana_rank}%4+1)+.25)]]d8" /></td>
             </tr>
         </table>
     </fieldset>
@@ -210,7 +181,7 @@
         </thead>
         <tbody>
             <tr>
-                <td style="width: 30px;"><input type="text" name="attr_arkana_range" disabled="true" value="@{int}*2" style="width: 100%;" /></td>
+                <td style="width: 50px;"><input type="int" name="attr_arkana_range" disabled="true" value="@{int}+@{int}" style="width: 100%;" /></td>
                 <td style="width: 150px;"><input type="text" name="attr_arkana_overcast_c" style="width: 25%;" /> / <input type="text" name="attr_arkana_overcast_m" style="width: 25%" /></td>
             </tr>
             <tr>
