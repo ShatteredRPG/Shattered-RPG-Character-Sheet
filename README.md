@@ -1,2 +1,1 @@
-Version 0.1
-Repository Setup & Initial Release
+0.1 Initial Commit

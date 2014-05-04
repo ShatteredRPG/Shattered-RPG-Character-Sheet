@@ -1,6 +1,6 @@
 <!-- Special thanks to Brian from Roll20.net for the roll logic!
     /r [[floor(@{tough}/4)]]d10 + [[floor({1,@{tough}%4}kl1/(@{tough}%4+1)+.5)]]d4 + [[floor({2,@{tough}%4}kl1/(@{tough}%4+1)+.45)]]d6 + [[floor(@{tough}%4/(@{tough}%4+1)+.25)]]d8
-    /r [[floor((@{stat}+${skill})/4)]]d10 + [[floor({1,(@{stat}+@{skill})%4}kl1/((@{stat}+@{skill})%4+1)+.5)]]d4 + [[floor({2,(@{stat}+@{skill})%4}kl1/((@{stat}+@{skill})%4+1)+.45)]]d6 + [[floor((@{stat}+@{skill})%4/(@{arkana_rank}%4+1)+.25)]]d8+@{bonus}
+    /r [[floor((@{stat}+${skill})/4)]]d10 + [[floor({1,(@{stat}+@{skill})%4}kl1/((@{stat}+@{skill})%4+1)+.5)]]d4 + [[floor({2,(@{stat}+@{skill})%4}kl1/((@{stat}+@{skill})%4+1)+.45)]]d6 + [[floor((@{stat}+@{skill})%4/((@{stat}+@{skill})%4+1)+.25)]]d8+@{bonus}
 -->
 <!-- Die Codes and Logo -->
 <div style="float: right; background-image: url('http://shattered-rpg.com/images/roll20-logo.png'); background-repeat: no-repeat">
@@ -109,37 +109,37 @@
             <tbody style="text-align: right;">
                 <tr>
                     <td style="border: 1px solid;">Strength (S)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_str" style="width: 100%;" min=0 value=2 /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_str" style="width: 100%;" min=0 /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_str" value="/me rolls a Strength Check of @{str}:\n/r [[floor(@{str}/4)]]d10 + [[floor({1,@{str}%4}kl1/(@{str}%4+1)+.5)]]d4 + [[floor({2,@{str}%4}kl1/(@{str}%4+1)+.45)]]d6 + [[floor(@{str}%4/(@{str}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Toughness (T)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_tough" style="width: 100%;" min=0 value=2 /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_tough" style="width: 100%;" min=0 /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_tough" value="/me rolls a Toughness Check of @{tough}:\n/r [[floor(@{tough}/4)]]d10 + [[floor({1,@{tough}%4}kl1/(@{tough}%4+1)+.5)]]d4 + [[floor({2,@{tough}%4}kl1/(@{tough}%4+1)+.45)]]d6 + [[floor(@{tough}%4/(@{tough}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Will Power (WP)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_wp" style="width: 100%;" min=0 value=2 /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_wp" style="width: 100%;" min=0 /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_wp" value="/me rolls a Will Power Check of @{wp}:\n/r [[floor(@{wp}/4)]]d10 + [[floor({1,@{wp}%4}kl1/(@{wp}%4+1)+.5)]]d4 + [[floor({2,@{wp}%4}kl1/(@{wp}%4+1)+.45)]]d6 + [[floor(@{wp}%4/(@{wp}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Agility (Ag)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_agi" style="width: 100%;" min=0 value=2 /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_agi" style="width: 100%;" min=0 /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls an Agility Check of @{ag}:\n/r [[floor(@{ag}/4)]]d10 + [[floor({1,@{ag}%4}kl1/(@{ag}%4+1)+.5)]]d4 + [[floor({2,@{ag}%4}kl1/(@{ag}%4+1)+.45)]]d6 + [[floor(@{ag}%4/(@{ag}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Intelligence (Int)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_int" style="width: 100%;" min=0 value=2 /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_int" style="width: 100%;" min=0 /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_int" value="/me rolls an Intelligence Check of @{int}:\n/r [[floor(@{int}/4)]]d10 + [[floor({1,@{int}%4}kl1/(@{int}%4+1)+.5)]]d4 + [[floor({2,@{int}%4}kl1/(@{int}%4+1)+.45)]]d6 + [[floor(@{int}%4/(@{int}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Perception (Per)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_per" style="width: 100%;" min=0 value=2 /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_per" style="width: 100%;" min=0 /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_per" value="/me rolls a Perception Check of @{per}:\n/r [[floor(@{per}/4)]]d10 + [[floor({1,@{per}%4}kl1/(@{per}%4+1)+.5)]]d4 + [[floor({2,@{per}%4}kl1/(@{per}%4+1)+.45)]]d6 + [[floor(@{per}%4/(@{per}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Charisma (Cha)</td>
-                    <td style="border: 1px solid;"><input type="number" name="attr_cha" style="width: 100%;" min=0 value=2 /><br /></td>
+                    <td style="border: 1px solid;"><input type="number" name="attr_cha" style="width: 100%;" min=0 /><br /></td>
                     <td style="border: 1px solid;"><button type="roll" name="roll_cha" value="/me rolls a Charisma Check of @{cha}:\n/r [[floor(@{cha}/4)]]d10 + [[floor({1,@{cha}%4}kl1/(@{cha}%4+1)+.5)]]d4 + [[floor({2,@{cha}%4}kl1/(@{cha}%4+1)+.45)]]d6 + [[floor(@{cha}%4/(@{cha}%4+1)+.25)]]d8" /></td>
                 </tr>
             </tbody>
@@ -148,8 +148,8 @@
     <!-- Health, Fatigue, Actions -->
     <!-- need formulas for this!!! -->
     <div>
-        Current Health: <input type="number" name="attr_curr_health" min=0 value=0 /><br />
-        Maximum Health: <input type="number" name="attr_max_health" min=0 value=0 /><br />
+        Current Health: <input type="number" name="attr_curr_health" min=0 /><br />
+        Maximum Health: <input type="number" name="attr_max_health" min=0 /><br />
         Current Fatigue: <input type="number" name="attr_curr_fatigue" min=0 /><br />
         Maximum Fatigue: <input type="number" name="attr_max_fatigue" min=0 /><br />
         Actions: <input type="text" name="attr_actions" minimum=0 value="" /><br /> <!-- put in actions formula -->
@@ -162,7 +162,7 @@
         Mental Resolve: <input type="text" name="attr_ment_resolve" disabled="true" value="@{resolve}+@{wp}" /><br />
     </div>
     <div>
-        Insanity: <input type="number" name="attr_insanity" min=0 value=0 /><br />
+        Insanity: <input type="number" name="attr_insanity" min=0 /><br />
         <h1>Eccentricities</h1>
         <table>
             <thead>
@@ -179,7 +179,7 @@
                         <input type="text" name="attr_eccen_name" />
                     </td>
                     <td>
-                        <input type="number" name="attr_eccen_pts" min=0 value=0 />
+                        <input type="number" name="attr_eccen_pts" min=0 />
                     </td>
                 </tr>
             </table>
@@ -195,7 +195,7 @@
             <option>Input signs</option>
         </select>
         Rank: <input type="number" name="attr_conv_rank" min=0 value=0 />
-        Conviction Points: <input type="number" name="attr_conv_points" min=0 value=0 />
+        Conviction Points: <input type="number" name="attr_conv_points" min=0 />
     </div>
 </div>
 
@@ -206,6 +206,7 @@
         <tr>
             <td>Name</td>
             <td>Rank</td>
+            <td>Stat+Skill</td>
             <td>Bonus</td>
             <td></td>
         </tr>
@@ -213,9 +214,10 @@
     <tbody>
         <tr>
             <td>Melee (s)</td>
-            <td><input type="number" name="attr_skill_melee" min=0 value=0 /></td>
-            <td><input type="number" name="attr_skill_melee_bonus" min=0 value=0 /></td>
-            <td><button type="roll" name="roll_arkana" value="/me rolls a Melee Check of @{skill_melee}:\n/r "</td>
+            <td><input type="number" name="attr_melee" min=0 /></td>
+            <td><input type="number" name="attr_str_melee" visible="false" disabled="true" value="@{str}+@{melee}"></td>
+            <td><input type="number" name="attr_melee_bonus" min=0 /></td>
+            <td><button type="roll" name="roll_skill_melee" value="/me rolls a Melee Check of @{str}+@{skill_melee}:\n/r [[floor(@{str_melee}/4)]]d10 + [[floor({1,@{str_melee}%4}kl1/(@{str_melee}%4+1)+.5)]]d4 + [[floor({2,@{str_melee}%4}kl1/(@{str_melee}%4+1)+.45)]]d6 + [[floor(@{str_melee}%4/(@{str_melee}%4+1)+.25)]]d8+@{melee_bonus}"></button></td>
         </tr>
     </tbody>
 </table>
