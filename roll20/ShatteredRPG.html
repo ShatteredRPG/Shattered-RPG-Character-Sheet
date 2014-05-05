@@ -124,7 +124,7 @@
                 <tr>
                     <td style="border: 1px solid;">Agility (Ag)</td>
                     <td style="border: 1px solid;"><input type="number" name="attr_agi" style="width: 100%;" min=0 /></td>
-                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls an Agility Check of @{ag}:\n/r [[floor(@{ag}/4)]]d10 + [[floor({1,@{ag}%4}kl1/(@{ag}%4+1)+.5)]]d4 + [[floor({2,@{ag}%4}kl1/(@{ag}%4+1)+.45)]]d6 + [[floor(@{ag}%4/(@{ag}%4+1)+.25)]]d8" /></td>
+                    <td style="border: 1px solid;"><button type="roll" name="roll_agi" value="/me rolls an Agility Check of @{agi}:\n/r [[floor(@{agi}/4)]]d10 + [[floor({1,@{agi}%4}kl1/(@{agi}%4+1)+.5)]]d4 + [[floor({2,@{agi}%4}kl1/(@{agi}%4+1)+.45)]]d6 + [[floor(@{agi}%4/(@{agi}%4+1)+.25)]]d8" /></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid;">Intelligence (Int)</td>
@@ -230,14 +230,14 @@
             <tr>
                 <td>Ballistic (Ag)</td>
                 <td><input type="number" name="attr_skill_bal" min=0 /></td>
-                <td><input type="number" name="attr_agbal" disabled="true" value="(@{ag}+@{skill_bal})" /></td>
+                <td><input type="number" name="attr_agbal" disabled="true" value="(@{agi}+@{skill_bal})" /></td>
                 <td><input type="number" name="attr_skill_balbonus" /></td>
                 <td><button type="roll" name="roll_agbal" value="/me rolls a Ballistic Check of [[@{agbal}]]:\n/r [[floor(@{agbal}/4)]]d10  + [[floor({1,@{agbal}%4}kl1/(@{agbal}%4+1)+.5)]]d4 + [[floor({2,@{agbal}%4}kl1/(@{agbal}%4+1)+.45)]]d6 + [[floor(@{agbal}%4/(@{agbal}%4+1)+.25)]]d8+@{skill_balbonus}" /></button></td>
             </tr>
             <tr>
                 <td>Hand to Hand (Ag)</td>
                 <td><input type="number" name="attr_skill_h2h" min=0 /></td>
-                <td><input type="number" name="attr_agh2h" disabled="true" value="(@{ag}+@{skill_h2h})" /></td>
+                <td><input type="number" name="attr_agh2h" disabled="true" value="(@{agi}+@{skill_h2h})" /></td>
                 <td><input type="number" name="attr_skill_h2hbonus" /></td>
                 <td><button type="roll" name="roll_agh2h" value="/me rolls a Hand to Hand Check of [[@{agh2h}]]:\n/r [[floor(@{agh2h}/4)]]d10  + [[floor({1,@{agh2h}%4}kl1/(@{agh2h}%4+1)+.5)]]d4 + [[floor({2,@{agh2h}%4}kl1/(@{agh2h}%4+1)+.45)]]d6 + [[floor(@{agh2h}%4/(@{agh2h}%4+1)+.25)]]d8+@{skill_h2hbonus}" /></button></td>
             </tr>
@@ -251,9 +251,9 @@
             <tr>
                 <td>Dodge (Ag)</td>
                 <td><input type="number" name="attr_skill_dodge" min=0 /></td>
-                <td><input type="number" name="attr_agdodge" disabled="true" value="(@ag}+@{skill_dodge})" /></td>
+                <td><input type="number" name="attr_agidodge" disabled="true" value="(@{agi}+@{skill_dodge})" /></td>
                 <td><input type="number" name="attr_skill_dodgebonus" /></td>
-                <td><button type="roll" name="roll_agdodge" value="/me rolls a Dodge Check of [[@{agdodge}]]:\n/r [[floor(@{agdodge}/4)]]d10  + [[floor({1,@{agdodge}%4}kl1/(@{agdodge}%4+1)+.5)]]d4 + [[floor({2,@{agdodge}%4}kl1/(@{agdodge}%4+1)+.45)]]d6 + [[floor(@{agdodge}%4/(@{agdodge}%4+1)+.25)]]d8+@{skill_dodgebonus}" /></button></td>
+                <td><button type="roll" name="roll_agidodge" value="/me rolls a Block Check of [[@{agidodge}]]:\n/r [[floor(@{agidodge}/4)]]d10  + [[floor({1,@{agidodge}%4}kl1/(@{agidodge}%4+1)+.5)]]d4 + [[floor({2,@{agidodge}%4}kl1/(@{agidodge}%4+1)+.45)]]d6 + [[floor(@{agidodge}%4/(@{agidodge}%4+1)+.25)]]d8+@{skill_dodgebonus}" /></button></td>
             </tr>
             <tr>
                 <td>Arkäna (Int)</td>
