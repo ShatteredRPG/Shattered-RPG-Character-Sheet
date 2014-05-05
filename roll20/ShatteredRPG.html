@@ -1,6 +1,5 @@
 <!-- Special thanks to Brian from Roll20.net for the roll logic!
     /r [[floor(@{tough}/4)]]d10 + [[floor({1,@{tough}%4}kl1/(@{tough}%4+1)+.5)]]d4 + [[floor({2,@{tough}%4}kl1/(@{tough}%4+1)+.45)]]d6 + [[floor(@{tough}%4/(@{tough}%4+1)+.25)]]d8
-    /r [[floor((@{stat}+${skill})/4)]]d10 + [[floor({1,(@{stat}+@{skill})%4}kl1/((@{stat}+@{skill})%4+1)+.5)]]d4 + [[floor({2,(@{stat}+@{skill})%4}kl1/((@{stat}+@{skill})%4+1)+.45)]]d6 + [[floor((@{stat}+@{skill})%4/((@{stat}+@{skill})%4+1)+.25)]]d8+@{bonus}
 -->
 <!-- Die Codes and Logo -->
 <div style="float: right; background-image: url('http://shattered-rpg.com/images/roll20-logo.png'); background-repeat: no-repeat">
@@ -194,33 +193,284 @@
         Sign: <select name="attr_conv_sign">
             <option>Input signs</option>
         </select>
-        Rank: <input type="number" name="attr_conv_rank" min=0 value=0 />
+        Rank: <input type="text" name="attr_conv_rank" min=0 value=0 />
         Conviction Points: <input type="number" name="attr_conv_points" min=0 />
     </div>
 </div>
 
+<!-- Initiative -->
+<div>
+    <h1>Initiative</h1>
+    <input type="text" name="attr_init" disabled="true" value="@{agi}" />
+    <input type="number" name="attr_initbonus" value=0 />
+    <button type="roll" name="roll_init" value="/me rolls an Initiative Check of @{init}:\n/r [[floor(@{init}/4)]]d10  + [[floor({1,@{init}%4}kl1/(@{init}%4+1)+.5)]]d4 + [[floor({2,@{init}%4}kl1/(@{init}%4+1)+.45)]]d6 + [[floor(@{init}%4/(@{init}%4+1)+.25)]]d8+@{initbonus}" /></div>
+
 <!-- Combat Skills -->
-<div>Combat Skills</div>
-<table>
-    <thead>
+<div>
+    <h1>Combat Skills</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Rank</td>
+                <td>Stat+Skill</td>
+                <td>Bonus</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Melee (s)</td>
+                <td><input type="number" name="attr_skill_melee" min=0 /></td>
+                <td><input type="number" name="attr_strmelee" disabled="true" value="(@{str}+@{skill_melee})" /></td>
+                <td><input type="number" name="attr_skill_meleebonus" min=0 /></td>
+                <td><button type="roll" name="roll_strmelee" value="/me rolls a Melee Check of [[@{strmelee}]]:\n/r [[floor(@{strmelee}/4)]]d10  + [[floor({1,@{strmelee}%4}kl1/(@{strmelee}%4+1)+.5)]]d4 + [[floor({2,@{strmelee}%4}kl1/(@{strmelee}%4+1)+.45)]]d6 + [[floor(@{strmelee}%4/(@{strmelee}%4+1)+.25)]]d8+@{skill_meleebonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Ballistic (Ag)</td>
+                <td><input type="number" name="attr_skill_bal" min=0 /></td>
+                <td><input type="number" name="attr_agbal" disabled="true" value="(@{ag}+@{skill_bal})" /></td>
+                <td><input type="number" name="attr_skill_balbonus" min=0 /></td>
+                <td><button type="roll" name="roll_agbal" value="/me rolls a Ballistic Check of [[@{agbal}]]:\n/r [[floor(@{agbal}/4)]]d10  + [[floor({1,@{agbal}%4}kl1/(@{agbal}%4+1)+.5)]]d4 + [[floor({2,@{agbal}%4}kl1/(@{agbal}%4+1)+.45)]]d6 + [[floor(@{agbal}%4/(@{agbal}%4+1)+.25)]]d8+@{skill_balbonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Hand to Hand (Ag)</td>
+                <td><input type="number" name="attr_skill_h2h" min=0 /></td>
+                <td><input type="number" name="attr_agh2h" disabled="true" value="(@{ag}+@{skill_h2h})" /></td>
+                <td><input type="number" name="attr_skill_h2hbonus" min=0 /></td>
+                <td><button type="roll" name="roll_agh2h" value="/me rolls a Hand to Hand Check of [[@{agh2h}]]:\n/r [[floor(@{agh2h}/4)]]d10  + [[floor({1,@{agh2h}%4}kl1/(@{agh2h}%4+1)+.5)]]d4 + [[floor({2,@{agh2h}%4}kl1/(@{agh2h}%4+1)+.45)]]d6 + [[floor(@{agh2h}%4/(@{agh2h}%4+1)+.25)]]d8+@{skill_h2hbonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Block (T)</td>
+                <td><input type="number" name="attr_skill_block" min=0 /></td>
+                <td><input type="number" name="attr_toughblock" disabled="true" value="(@{tough}+@{skill_block})" /></td>
+                <td><input type="number" name="attr_skill_blockbonus" min=0 /></td>
+                <td><button type="roll" name="roll_toughblock" value="/me rolls a Block Check of [[@{toughblock}]]:\n/r [[floor(@{toughblock}/4)]]d10  + [[floor({1,@{toughblock}%4}kl1/(@{toughblock}%4+1)+.5)]]d4 + [[floor({2,@{toughblock}%4}kl1/(@{toughblock}%4+1)+.45)]]d6 + [[floor(@{toughblock}%4/(@{toughblock}%4+1)+.25)]]d8+@{skill_blockbonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Dodge (Ag)</td>
+                <td><input type="number" name="attr_skill_dodge" min=0 /></td>
+                <td><input type="number" name="attr_agdodge" disabled="true" value="(@ag}+@{skill_dodge})" /></td>
+                <td><input type="number" name="attr_skill_dodgebonus" min=0 /></td>
+                <td><button type="roll" name="roll_agdodge" value="/me rolls a Dodge Check of [[@{agdodge}]]:\n/r [[floor(@{agdodge}/4)]]d10  + [[floor({1,@{agdodge}%4}kl1/(@{agdodge}%4+1)+.5)]]d4 + [[floor({2,@{agdodge}%4}kl1/(@{agdodge}%4+1)+.45)]]d6 + [[floor(@{agdodge}%4/(@{agdodge}%4+1)+.25)]]d8+@{skill_dodgebonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Arkäna (Int)</td>
+                <td><input type="number" name="attr_skill_arkana" min=0 /></td>
+                <td><input type="number" name="attr_intarkana" disabled="true" value="(@{int}+@{skill_arkana})" /></td>
+                <td><input type="number" name="attr_skill_arkanabonus" min=0 /></td>
+                <td><button type="roll" name="roll_intarkana" value="/me rolls an Arkäna Check of [[@{intarkana}]]:\n/r [[floor(@{intarkana}/4)]]d10  + [[floor({1,@{intarkana}%4}kl1/(@{intarkana}%4+1)+.5)]]d4 + [[floor({2,@{intarkana}%4}kl1/(@{intarkana}%4+1)+.45)]]d6 + [[floor(@{intarkana}%4/(@{intarkana}%4+1)+.25)]]d8+@{skill_arkanabonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Devotion (Cha)</td>
+                <td><input type="number" name="attr_skill_dev" min=0 /></td>
+                <td><input type="number" name="attr_chadev" disabled="true" value="(@{cha}+@{skill_dev})" /></td>
+                <td><input type="number" name="attr_skill_devbonus" min=0 /></td>
+                <td><button type="roll" name="roll_chadev" value="/me rolls a Devotion Check of [[@{chadev}]]:\n/r [[floor(@{chadev}/4)]]d10  + [[floor({1,@{chadev}%4}kl1/(@{chadev}%4+1)+.5)]]d4 + [[floor({2,@{chadev}%4}kl1/(@{chadev}%4+1)+.45)]]d6 + [[floor(@{chadev}%4/(@{chadev}%4+1)+.25)]]d8+@{skill_devbonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Psy (WP)</td>
+                <td><input type="number" name="attr_skill_psy" min=0 /></td>
+                <td><input type="number" name="attr_wppsy" disabled="true" value="(@{wp}+@{skill_psy})" /></td>
+                <td><input type="number" name="attr_skill_psybonus" min=0 /></td>
+                <td><button type="roll" name="roll_wppsy" value="/me rolls a Psy Check of [[@{wppsy}]]:\n/r [[floor(@{wppsy}/4)]]d10  + [[floor({1,@{wppsy}%4}kl1/(@{wppsy}%4+1)+.5)]]d4 + [[floor({2,@{wppsy}%4}kl1/(@{wppsy}%4+1)+.45)]]d6 + [[floor(@{wppsy}%4/(@{wppsy}%4+1)+.25)]]d8+@{skill_psybonus}" /></button></td>
+            </tr>
+            <tr>
+                <td>Resolve (WP)</td>
+                <td><input type="number" name="attr_skill_resolve" min=0 /></td>
+                <td><input type="number" name="attr_wpresolve" disabled="true" value="(@{wp}+@{skill_resolve})" /></td>
+                <td><input type="number" name="attr_skill_resolvebonus" min=0 /></td>
+                <td><button type="roll" name="roll_wpresolve" value="/me rolls a Resolve Check of [[@{wpresolve}]]:\n/r [[floor(@{wpresolve}/4)]]d10  + [[floor({1,@{wpresolve}%4}kl1/(@{wpresolve}%4+1)+.5)]]d4 + [[floor({2,@{wpresolve}%4}kl1/(@{wpresolve}%4+1)+.45)]]d6 + [[floor(@{wpresolve}%4/(@{wpresolve}%4+1)+.25)]]d8+@{skill_resolvebonus}" /></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Non-Combat Skills -->
+<div>
+    <h1>Non-Combat Skills</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Rank</td>
+                <td>Stat+Skill</td>
+                <td>Bonus</td>
+                <td></td>
+            </tr>
+        </thead>
+    </table>
+    <div>Strength</div>
+    <table>
         <tr>
-            <td>Name</td>
-            <td>Rank</td>
-            <td>Stat+Skill</td>
-            <td>Bonus</td>
+            <td>Athletics</td>
+            <td></td>
             <td></td>
         </tr>
-    </thead>
-    <tbody>
         <tr>
-            <td>Melee (s)</td>
-            <td><input type="number" name="attr_melee" min=0 /></td>
-            <td><input type="number" name="attr_str_melee" visible="false" disabled="true" value="@{str}+@{melee}"></td>
-            <td><input type="number" name="attr_melee_bonus" min=0 /></td>
-            <td><button type="roll" name="roll_skill_melee" value="/me rolls a Melee Check of @{str}+@{skill_melee}:\n/r [[floor(@{str_melee}/4)]]d10 + [[floor({1,@{str_melee}%4}kl1/(@{str_melee}%4+1)+.5)]]d4 + [[floor({2,@{str_melee}%4}kl1/(@{str_melee}%4+1)+.45)]]d6 + [[floor(@{str_melee}%4/(@{str_melee}%4+1)+.25)]]d8+@{melee_bonus}"></button></td>
+            <td>Intimidate</td>
+            <td></td>
+            <td></td>
         </tr>
-    </tbody>
-</table>
+    </table>
+    <div>Agility</div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div>Intelligence</div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div>Ancient Lore (Int)</div>
+    <fieldset name="repeating_ancientlore">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+    <div>Common Lore (Int)</div>
+    <fieldset name="repeating_commonlore">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+    <div>Secret Lore (Int)</div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div>Will Power</div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div>Perception</div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div>Charisma</div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
 
 <!-- Arkana -->
 <div style="float: left;">
@@ -433,5 +683,36 @@
 <!-- Notes & Comments -->
 <div>
     <h1>Notes & Comments</h1>
-    <textarea name="attr_descAndComments"></textarea>
+    <textarea name="attr_notesAndComments"></textarea>
 </div>
+<!-- Notes (Money) -->
+<div>
+    <h1>Notes (Money)</h1>
+    <div>
+        Notes Held: <input type="text" name="attr_notesMoney" /> Nts
+    </div>
+</div>
+<!-- Equipment -->
+<div>
+    <h1>Equipment</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Cost</td>
+                <td>Qty</td>
+            </tr>
+        </thead>
+    </table>
+    <fieldset name="repeating_equipment">
+        <table>
+            <tr>
+                <td><input type="text" name="attr_equip_name" /></td>
+                <td><input type="text" name="attr_equip_cost" /></td>
+                <td><input type="number" name="attr_equip_qty" min=0 /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+
+<div>Shattered © It's Never Dark Enough, LLC dba I.N.D.E</div>
