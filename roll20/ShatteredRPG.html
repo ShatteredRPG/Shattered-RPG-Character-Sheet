@@ -153,14 +153,14 @@
         Current Fatigue: <input type="number" name="attr_curr_fatigue" min=0 value=0 /><br />
         Maximum Fatigue Bonus: <input type="number" name="attr_fatigue_bonus" value=0 /><br />
         Maximum Fatigue: <input type="number" name="attr_max_fatigue" disabled="true" value="(@{tough}+@{skill_resolve}+@{fatigue_bonus})" /><br />
-        Actions: <input type="text" name="attr_actions" min=0 value="5" /><br />
+        Actions: <input type="number" name="attr_actions" disabled="true" min=0 value="5" /><br />
 
     </div>
     <div>
         <h1>Damage Reduction and Resolve</h1>
-        Damage Reduction: <input type="text" name="attr_dr" disabled="true" value="@{armor_value}+@{tough}" /><br />
-        Physical Resolve: <input type="text" name="attr_phys_resolve" disabled="true" value="@{resolve}+@{tough}" /><br />
-        Mental Resolve: <input type="text" name="attr_ment_resolve" disabled="true" value="@{resolve}+@{wp}" /><br />
+        Damage Reduction: <input type="number" name="attr_dr" disabled="true" value="@{armor_value}+@{tough}" min=0 /><br />
+        Physical Resolve: <input type="number" name="attr_phys_resolve" disabled="true" value="@{resolve}+@{tough}" min=0 /><br />
+        Mental Resolve: <input type="number" name="attr_ment_resolve" disabled="true" value="@{resolve}+@{wp}" min=0 /><br />
     </div>
     <div>
         <h1>Fear & Insanity</h1>
@@ -193,12 +193,35 @@
     <div>
         <h1>Conviction</h1>
         Element: <select name="attr_conv_element">
-            <option>Input elements</option>
+            <option>Air</option>
+            <option>Darkness</option>
+            <option>Death</option>
+            <option>Earth</option>
+            <option>Fire</option>
+            <option>Hate</option>
+            <option>Life</option>
+            <option>Light</option>
+            <option>Love</option>
+            <option>Peace</option>
+            <option>War</option>
+            <option>Water</option>
         </select>
         Sign: <select name="attr_conv_sign">
             <option>Input signs</option>
+            <option>Air - Wings</option>
+            <option>Darkness - Black irises</option>
+            <option>Death - Bones eteched in skin</option>
+            <option>Earth - Fissured Skin</option>
+            <option>Fire - Embers under skin</option>
+            <option>Hate - Crown of Thorns</option>
+            <option>Life - No scars</option>
+            <option>Light - Wounds shine</option>
+            <option>Love - White halo</option>
+            <option>Peace - Leaf emblazoned on face</option>
+            <option>War - Eyes become amber</option>
+            <option>Water - Don't bleed</option>
         </select>
-        Rank: <input type="text" name="attr_conv_rank" min=0 value=0 />
+        Rank: <input type="number" name="attr_conv_rank" min=0 value=0 />
         Conviction Points: <input type="number" name="attr_conv_points" min=0 />
     </div>
 </div>
@@ -206,7 +229,7 @@
 <!-- Initiative -->
 <div>
     <h1>Initiative</h1>
-    <input type="text" name="attr_init" disabled="true" value="@{per}" />
+    <input type="number" name="attr_init" disabled="true" value="@{agi}" />
     <input type="number" name="attr_initbonus" value=0 />
     <button type="roll" name="roll_init" value="/me rolls an Initiative Check of @{init}:\n/r [[floor(@{init}/4)]]d10  + [[floor({1,@{init}%4}kl1/(@{init}%4+1)+.5)]]d4 + [[floor({2,@{init}%4}kl1/(@{init}%4+1)+.45)]]d6 + [[floor(@{init}%4/(@{init}%4+1)+.25)]]d8+@{initbonus}" />
 </div>
@@ -753,7 +776,7 @@
 <div>
     <h1>Notes (Money)</h1>
     <div>
-        Notes Held: <input type="text" name="attr_notesMoney" /> Nts
+        Notes Held: <input type="number" name="attr_notesMoney" /> Nts
     </div>
 </div>
 <!-- Equipment -->
